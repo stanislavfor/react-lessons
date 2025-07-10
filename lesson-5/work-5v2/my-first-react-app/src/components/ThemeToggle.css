@@ -1,0 +1,29 @@
+/* src/components/ThemeToggle.css */
+.theme-toggle-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #61dafb;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+    background-color: #21a1f1;
+    color: #fff;
+}
+
+.dark-theme .theme-toggle-button {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-theme .theme-toggle-button:hover {
+    background-color: #666;
+    color: #fff;
+}

@@ -1,0 +1,61 @@
+/* style for App.js */
+
+.App {
+  text-align: center;
+  padding: 0;
+}
+
+.message-text {
+  color: darkblue;
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  margin-right: 20px; /* отступ между логотипом и текстом */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row; /* изменение на горизонтальное расположение */
+  align-items: center;  /* вертикальное выравнивание по центру */
+  justify-content: center; /* выравнивание по центру */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  gap: 20px; /* промежутки между элементами */
+  padding: 0 20px;
+}
+
+.App-link {
+  color: #61dafb;
+  font-size: 16px;
+  margin-left: 20px; /* отступ между параграфом и ссылкой */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  color: #61dafb;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+}
