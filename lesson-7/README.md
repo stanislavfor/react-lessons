@@ -311,6 +311,8 @@ const handleDeleteTask = (id) => {
 }
 
 ```
+##
+### Скриншот страницы "Список задач"
 
 ![async-task-list](../assets/async-task-list-1.png)
 
