@@ -1,0 +1,160 @@
+.App {
+  text-align: center;
+  /*adding: 0;*/
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  /*background-color: #B0E0E6;*/
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  margin-right: 20px;
+  transition: filter 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  margin: 0 auto;
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  font-size: 16px;
+  color: #61dafb;
+  padding-right: 10px;
+}
+
+.header-link {
+  margin-left: 50px;
+}
+
+.header-title {
+  font-size: 24px;
+  color: #61dafb;
+}
+
+.header-icon {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 1rem 0;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.App-footer {
+  margin: 0 auto;
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 0;
+  /*width: 60%;*/
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 60%;
+  /*background-color: #B0E0E6;*/
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* расстояние между элементами */
+  margin-bottom: 35px;
+}
+
+.tasks-list li {
+  background-color: #f5f5f5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.tasks-list li:hover {
+  background-color: #e0f7fa;
+}
+
+/* Контейнер для кнопок */
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Кнопки */
+.tasks-list button {
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 110px;
+}
+
+.delete-button {
+  background-color: #ff4d4f;
+}
+
+.delete-button:hover {
+  background-color: #d9363e;
+}
+
+
+.mark-button {
+  background-color: #1890ff;
+}
+
+.mark-button:hover {
+  background-color: #1677cc;
+}
