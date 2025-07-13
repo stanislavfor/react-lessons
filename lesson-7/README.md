@@ -316,6 +316,22 @@ const handleDeleteTask = (id) => {
 
 ![async-task-list](../assets/async-task-list-1.png)
 
+##
+### Принудительная остановка процесса на портах 3000, 3001, если консоль уже закрыта
+
+- Для Windows (PowerShell) выполнить команду:
+    -  для остановки порта 3000:
+
+    ```bash
+      Get-NetTCPConnection -LocalPort 3000 -State Listen | ForEach-Object {
+        Stop-Process -Id $_.OwningProcess -Force
+    }
+    
+    ```
+  
+##
+### - > [Переход в Обновленный Проект 'my-first-react-app'](./work-7/my-first-react-app/README.md)
+
 <br><br><br><br>
 ### - > [Переход в Корневой каталог](../README.md)
 <hr><hr><hr><hr>

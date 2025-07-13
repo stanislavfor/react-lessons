@@ -1,0 +1,7 @@
+// src/redux/store.js
+import { createStore } from 'redux';
+import { themeReducer } from './themeReducer';
+
+const store = createStore(themeReducer);
+
+export default store;

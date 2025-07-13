@@ -1,0 +1,23 @@
+.comments-container {
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.comment-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.comment-item button {
+    margin-left: 10px;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    padding: 5px 3px;
+    cursor: pointer;
+}
+
+.comment-item button:hover {
+    background-color: red;
+}

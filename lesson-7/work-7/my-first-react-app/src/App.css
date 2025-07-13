@@ -1,0 +1,371 @@
+/* src/App.css */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  text-align: center;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App-link {
+  font-size: 20px;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.App-link:hover {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-theme {
+  background-color: #121212;
+  /*color: #f5f5f5;*/
+  color: #61dafb;
+}
+
+.message-text {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  margin-right: 20px;
+  transition: filter 0.3s ease;
+}
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  .App-logo {*/
+/*    animation: App-logo-spin infinite 20s linear;*/
+/*  }*/
+/*}*/
+
+.App-header {
+  /*background-color: transparent;*/
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 0 20px;
+  background-color: var(--header-bg);
+  transition: background-color 0.3s;
+}
+
+
+h1 {
+  margin: 1rem 0;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/*.page-wrapper {*/
+/*  background-color: #ffffff;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  !*min-height: 80vh;*!*/
+/*}*/
+
+/* Общие стили в светлой теме */
+
+.light-theme {
+  --header-bg: #1a1a1a;
+}
+
+/* Общие стили в темной теме */
+
+.dark-theme {
+  --header-bg: #f5f5f5;
+}
+
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select,
+.dark-theme .page-wrapper{
+  border: 1px solid #ccc;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark-theme button {
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+}
+
+/* цвет ссылки header в зависимости от темы */
+
+.light-theme .App-link {
+  color: #007acc;
+}
+
+.dark-theme .App-link {
+  color: #90caf9;
+}
+
+/* цвет logo в темной теме */
+
+.dark-theme .App-logo {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(5%) saturate(200%) hue-rotate(180deg);
+}
+
+.App-footer {
+  background-color: transparent;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  padding: 0;
+}
+
+.App-footer {
+  background-color: var(--header-bg);
+  transition: background-color 0.3s;
+}
+
+.App-nav {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+}
+
+
+/* === Компонент CommentsList.js: Темная и светлая тема === */
+
+.light-theme .comments-container {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --input-bg: #ffffff;
+  --input-text: #000000;
+  --input-border: #ccc;
+  --btn-bg: #1890ff;
+  --btn-text: #ffffff;
+  --btn-hover-bg: #1677cc;
+  --item-bg: #f0f0f0;
+  --icon-color: #ff4d4f;
+  --icon-hover-color: #d9363e;
+}
+
+.dark-theme .comments-container {
+  --bg-color: #1e1e1e;
+  --text-color: #000000;
+  --input-bg: #2c2c2c;
+  --input-text: #ffffff;
+  --input-border: #444;
+  --btn-bg: #3a8bdc;
+  --btn-text: #000;
+  --btn-hover-bg: #2c6db4;
+  --item-bg: #2a2a2a;
+  --icon-color: #ff4d4f;
+  --icon-hover-color: #e63946;
+}
+
+.comments-container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.comment-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-input input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+
+.comment-input button {
+  padding: 8px 16px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.comment-input button:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-item {
+  background: var(--item-bg);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0 8px;
+  color: var(--icon-color);
+}
+
+.icon-button:hover {
+  color: var(--icon-hover-color);
+}
+
+/* === Компонент TodoList.js: Темная и светлая тема === */
+
+/* Стилизация чекбокса для темной темы */
+.dark-theme .MuiCheckbox-root {
+  color: #90caf9;
+}
+
+.dark-theme .MuiCheckbox-root.Mui-checked {
+  color: #42a5f5; /* цвет галочки */
+}
+
+.dark-theme .MuiSvgIcon-root {
+  border: none !important;
+  border-radius: 0 !important;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover эффект */
+.dark-theme .MuiCheckbox-root:hover {
+  background-color: rgba(144, 202, 249, 0.1);
+}
+
+.light-theme .todo-container {
+  --todo-bg: #ffffff;
+  --todo-text: #000000;
+  --todo-border: #ccc;
+  --todo-input-bg: #ffffff;
+  --todo-input-text: #000000;
+  --todo-btn-bg: #1976d2;
+  --todo-btn-text: #ffffff;
+  --todo-btn-hover: #1565c0;
+  --todo-item-bg: #f5f5f5;
+  --checkbox-color: #1976d2;
+  --checkbox-bg: #ffffff;
+}
+
+.dark-theme .todo-container {
+  --todo-bg: #1e1e1e;
+  --todo-text: #ffffff;
+  --todo-border: #444;
+  --todo-input-bg: #2c2c2c;
+  --todo-input-text: #ffffff;
+  --todo-btn-bg: #90caf9;
+  --todo-btn-text: #000000;
+  --todo-btn-hover: #64b5f6;
+  --todo-item-bg: #2a2a2a;
+  --checkbox-color: #90caf9;
+  --checkbox-bg: #90caf9;
+}
+
+
+.todo-container {
+  background-color: var(--todo-bg);
+  color: var(--todo-text);
+  padding: 20px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  background-color: var(--todo-input-bg);
+  color: var(--todo-input-text);
+  border: 1px solid var(--todo-border);
+  border-radius: 4px;
+}
+
+.todo-input button {
+  padding: 8px 16px;
+  background-color: var(--todo-btn-bg);
+  color: var(--todo-btn-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.todo-input button:hover {
+  background-color: var(--todo-btn-hover);
+}
+
+.todo-item {
+  background-color: var(--todo-item-bg);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
