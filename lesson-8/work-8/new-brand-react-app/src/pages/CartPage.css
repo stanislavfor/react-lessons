@@ -1,0 +1,104 @@
+/* --- Обёртка для прокрутки на маленьких экранах --- */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* --- Таблица --- */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* предотвращает сжатие колонок */
+    margin: 0 auto;
+}
+
+/* --- Заголовки и ячейки --- */
+.cart-table th,
+.cart-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* --- Заголовки --- */
+.cart-table th {
+    background-color: #f4f4f4;
+}
+
+/* --- Общая сумма --- */
+.cart-total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* --- Кнопка удаления --- */
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* --- Скругление углов --- */
+thead tr th:first-child {
+    border-radius: 20px 0 0 0;
+}
+thead tr th:last-child {
+    border-radius: 0 20px 0 0;
+}
+tfoot tr th:first-child {
+    border-radius: 0 0 0 20px;
+}
+tfoot tr th:last-child {
+    border-radius: 0 0 20px 0;
+}
+
+/* --- Общие стили ячеек --- */
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+/* --- Чередование строк --- */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tbody tr {
+    background-color: #F2F8F8;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* --- Эффект наведения --- */
+tbody tr:hover {
+    background-color: #ffffff;
+    z-index: 1;
+    position: relative;
+}
+tbody tr:active {
+    background-color: #ffffff;
+    z-index: 1;
+    position: relative;
+}
+
+/* --- Медиа-запрос для мелких экранов --- */
+@media (max-width: 768px) {
+    .cart-table {
+        font-size: 12px;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding: 6px;
+    }
+
+    .cart-total {
+        text-align: center;
+    }
+}
