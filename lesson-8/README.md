@@ -150,11 +150,13 @@
   - Страница отображения результатов поиска по сайту. 
   - Выводит товары, соответствующие введённому запросу, с возможностью фильтрации и перехода к деталям товара.
   - Требует доработки по согласованному плану.
-
+<br><br>
 - Страница `/men/:category` или `/women/:category`, например, bags, accessories и другие элементы:
   - Выводит товары соответствующей категории
   - Фильтрация по размеру: `XS`, `S`, `M`, `L`, `XL`
   - Добавление в корзину - с размером, ценой, количеством
+
+![bags](./../assets/react-bags.jpg)
   
 ##
 ### 2.4. Компоненты
@@ -175,7 +177,18 @@
 - Наведение на карточки товаров реализует затемнение и кнопку "Add to Cart"
 
 ##
-### 2.6. Логика корзины (`Redux Toolkit`)
+### 2.6. Обработка ошибок
+
+- `NotFoundPage` при недопустимом URL
+- Проверка пустой корзины
+- Удалены предупреждения ESLint
+
+![404](./../assets/react-404.jpg)
+
+
+
+##
+### 2.7. Логика корзины (`Redux Toolkit`)
 
 Использован `@reduxjs/toolkit`:
 
@@ -197,7 +210,7 @@ items: [
 
 
 ##
-### 2.7. Страница корзины
+### 2.8. Страница корзины
 
 - Таблица с товарами:
     - Название
@@ -211,13 +224,176 @@ items: [
 ![cart](./../assets/react-cart.jpg)
 
 ##
-### 2.8. Обработка ошибок
+### Размещение console.log
 
-- `NotFoundPage` при недопустимом URL
-- Проверка пустой корзины
-- Удалены предупреждения ESLint
+Необходимо понять, как работает выбор размера (selectedSize). Проверить, что:
+- selectedSize обновляется правильно.
+- В корзину отправляется нужный размер.
 
-![cart](./../assets/react-404.jpg)
+В схему кода для отладки с помощью console.log разместить проверку изменения и отправки size:
+- Для компонента страницы CategoryPage.js в handleSizeChange, handleAddToCart
+- Для компонента страницы ProductPage.js в handleSizeChange, handleAddToCart
+- Для компонента TopItems.js в handleSizeChange, handleAddToCart
+
+В handleSizeChange:
+```
+const handleSizeChange = (e, id) => {
+  const newSize = e.target.value;
+  setSelectedSize(prev => {
+    const updated = { ...prev, [id]: newSize };
+    console.log('Размер изменён:', updated);
+    return updated;
+  });
+};
+
+```
+
+В handleAddToCart:
+```
+const handleAddToCart = (item) => {
+  const sizeToAdd = selectedSize[item.id] || 'M';
+
+  console.log('Добавление в корзину:', {
+    id: item.id,
+    title: item.title,
+    size: sizeToAdd,
+    price: item.price
+  });
+
+  dispatch( ....
+
+```
+
+Функция выбора размера в ItemsElement.js:
+```
+<select
+  value={selectedSize[item.id] || 'M'}
+  onChange={(e) => onSizeChange(e, item.id)}
+>
+  {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map(size => (
+    <option key={size} value={size}>
+      Size: {size}
+    </option>
+  ))}
+</select>
+
+```
+
+##
+## Выбор размера товара и добавление в корзину
+### Реализация:
+
+1. Пользователь выбирает размер через `<select>`.
+2. `handleSizeChange` записывает размер в `selectedSize[item.id]`.
+3. При клике на "Add to cart":
+
+  - Компонент берёт размер из `selectedSize`.
+  - Если размер не был выбран, используется `'M'`.
+4. Redux получает весь нужный payload для хранения товара в корзине.
+
+##
+### 1. Создание состояния selectedSize
+
+```
+const [selectedSize, setSelectedSize] = useState({});
+```
+
+, где:
+
+- `useState({})` инициализирует состояние с пустым объектом.
+- `selectedSize` - это объект, в котором мы будем хранить выбранный размер для каждого товара по его `id`.
+- `setSelectedSize` - функция, позволяющая обновлять `selectedSize`.
+
+
+#### Пример после выбора пользователем размера:
+
+```
+{
+  3: "L",   // пользователь выбрал размер "L" для товара с id 3
+  7: "M",   // для товара с id 7 оставлен размер по умолчанию "M"
+}
+```
+
+##
+### 2. Обновление размера для конкретного товара
+
+```
+const handleSizeChange = (e, id) => {
+  setSelectedSize(prev => ({
+    ...prev,
+    [id]: e.target.value
+  }));
+};
+```
+
+, где:
+
+- `e.target.value` - получает значение выбранного размера из выпадающего списка `<select>`.
+- `id` - идентификатор товара.
+- `setSelectedSize(prev => ...)` - обновляет состояние, сохраняя предыдущие выбранные размеры и добавляя или изменяя размер для текущего `id`.
+
+- `...prev` важен, чтобы не затирать данные по другим товарам, то есть нужно копировать предыдущие значения, то есть добавляем в код  `...prev`, а затем добавляем или перезаписываем нужный размер по id.
+
+
+##
+### 3. Компонент ItemsElement.js - отображение select размера
+
+```
+<select
+  value={selectedSize[item.id] || 'M'}
+  onChange={(e) => onSizeChange(e, item.id)}
+>
+  {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map(size => (
+    <option key={size} value={size}>
+      Size: {size}
+    </option>
+  ))}
+</select>
+```
+
+, где:
+
+- select - отображает выпадающий список размеров товара.
+- `value={selectedSize[item.id] || 'M'}`:
+
+  - Показывает ранее выбранный размер, если он есть;
+  - По умолчанию - `'M'`, если не выбрано ничего.
+
+- `onChange={(e) => onSizeChange(e, item.id)}`:
+
+  - При изменении вызывает обработчик `onSizeChange`, передавая `event` и `id` текущего товара.
+
+
+##
+### 4. Добавление товара в корзину
+
+```
+dispatch(addToCart({
+  id: item.id,
+  title: item.title,
+  price: item.price,
+  size: selectedSize[item.id] || 'M',
+  quantity: 1
+}));
+```
+
+, где:
+dispatch - вызывает Redux-действие `addToCart`, передавая параметры товара:
+
+- `id`, `title`, `price` - информация о товаре;
+- `size` - выбирается из состояния `selectedSize`, если размер выбран, по умолчанию указан размер `'M'`.
+- `quantity` - количество товара, изначально `1`.
+
+
+Товар с выбранным размером попадает в `cart.items` в Redux.
+
+
+
+
+
+
+
+
 
 <br><br><br><br>
 ### - > [Переход в Корневой каталог](../README.md)

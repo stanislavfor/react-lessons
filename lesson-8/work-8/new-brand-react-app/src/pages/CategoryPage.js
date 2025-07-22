@@ -7,6 +7,7 @@ import Feature from '../components/Feature';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
 import './CategoryPage.css';
+import ItemsElement from '../components/ItemsElement';
 
 const CategoryPage = () => {
     const { gender, subcategory } = useParams();
@@ -33,11 +34,20 @@ const CategoryPage = () => {
     };
 
     const handleAddToCart = (item) => {
+        const sizeToAdd = selectedSize[item.id] || 'M';
+        console.log('На страницы Category. Добавление в корзину:', {
+            id: item.id,
+            title: item.title,
+            size: sizeToAdd,
+            price: item.price
+        });
+
         dispatch(addToCart({
             id: item.id,
             title: item.title,
             price: item.price,
-            size: selectedSize[item.id] || 'M',
+            // size: selectedSize[item.id] || 'M',
+            size: sizeToAdd,
             quantity: 1
         }));
 
@@ -45,6 +55,26 @@ const CategoryPage = () => {
         setShowNotification(true); // показать уведомление
         setTimeout(() => setShowNotification(false), 2000);
     };
+
+    // const handleSizeChange = (e, id) => {
+    //     setSelectedSize(prev => ({
+    //         ...prev,
+    //         [id]: e.target.value
+    //     }));
+    // };
+
+    const handleSizeChange = (e, id) => {
+        const newSize = e.target.value;
+        setSelectedSize(prev => {
+            const updated = { ...prev, [id]: newSize };
+            console.log('На страницы Category. Размер изменён:', updated);
+            return updated;
+        });
+    };
+
+
+
+
 
     return (
         <>
@@ -68,36 +98,43 @@ const CategoryPage = () => {
                     </div>
                 )}
 
-                <div className="top-items-wrapper" style={{ paddingTop: '40px' }}>
-                    {items.slice(0, visibleCount).map(item => (
-                        <div className="top-item" key={item.id}>
-                            <div className="top-item-image-container">
-                                <img src={item.image} alt={item.name} className="top-item-image" />
-                                <div
-                                    className="hover-overlay"
-                                    onClick={() => handleAddToCart(item)} // вызов обработчика
-                                >
-                                    <span className="overlay-text">Add to Cart</span>
-                                </div>
-                            </div>
-                            <div className="top-item__text">
-                                <h4>{item.title}</h4>
-                                <p>{item.description}</p>
-                                <select
-                                    value={selectedSize[item.id] || 'M'}
-                                    onChange={(e) =>
-                                        setSelectedSize({ ...selectedSize, [item.id]: e.target.value })
-                                    }
-                                >
-                                    {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size) => (
-                                        <option key={size} value={size}>Size:{size}</option>
-                                    ))}
-                                </select>
-                                <div className="top-item__price">${item.price.toFixed(2)}</div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <ItemsElement
+                    items={items.slice(0, visibleCount)}
+                    selectedSize={selectedSize}
+                    onSizeChange={handleSizeChange}
+                    onAddToCart={handleAddToCart}
+                />
+
+                {/*<div className="top-items-wrapper" style={{ paddingTop: '40px' }}>*/}
+                {/*    {items.slice(0, visibleCount).map(item => (*/}
+                {/*        <div className="top-item" key={item.id}>*/}
+                {/*            <div className="top-item-image-container">*/}
+                {/*                <img src={item.image} alt={item.name} className="top-item-image" />*/}
+                {/*                <div*/}
+                {/*                    className="hover-overlay"*/}
+                {/*                    onClick={() => handleAddToCart(item)} // вызов обработчика*/}
+                {/*                >*/}
+                {/*                    <span className="overlay-text">Add to Cart</span>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*            <div className="top-item__text">*/}
+                {/*                <h4>{item.title}</h4>*/}
+                {/*                <p>{item.description}</p>*/}
+                {/*                <select*/}
+                {/*                    value={selectedSize[item.id] || 'M'}*/}
+                {/*                    onChange={(e) =>*/}
+                {/*                        setSelectedSize({ ...selectedSize, [item.id]: e.target.value })*/}
+                {/*                    }*/}
+                {/*                >*/}
+                {/*                    {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size) => (*/}
+                {/*                        <option key={size} value={size}>Size:{size}</option>*/}
+                {/*                    ))}*/}
+                {/*                </select>*/}
+                {/*                <div className="top-item__price">${item.price.toFixed(2)}</div>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*    ))}*/}
+                {/*</div>*/}
 
                 {visibleCount < items.length ? (
                     <div className="next-button" style={{ marginBottom: '150px' }}>
