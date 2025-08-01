@@ -1,117 +1,69 @@
-/* ------ Медиазапрос для ширины экрана от 768px до 1024px ------------ */
+/* ==================== MEDIA QUERIES ==================== */
 
-@media only screen and (min-width: 1025px) and (max-width: 1239px) {
+/* ------ Ширина от 1240px до 1595px ------------ */
+@media only screen and (min-width: 1240px) and (max-width: 1595px) {
+
     .top-images {
+        display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .top-images-box {}
-
-    .top-images-for-men {
-        margin-left: 30px;
-        margin-bottom: 30px;
-    }
-
-
-}
-
-/* ------ Медиазапрос -------*/
-
-/* ------ Медиазапрос для ширины экрана от 768px до 1024px ------------ */
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .top {
-        height: 508px;
-        background-position: left top;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .top__link {
-        padding-top: 150px;
-        margin-right: 130px;
-        line-height: 10px;
-        letter-spacing: 0;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .top__title h2,
-    .top__title h4 {
-        display: block;
-        height: 40px;
-        align-items: start;
-        color: rgb(255, 255, 255);
-    }
-
-    .top-images-wrapper {
-        padding: 20px;
-        margin: 50px 0 0 0;
-        max-width: 100%;
-    }
-
-    .top-images {
-        padding: 0;
-        flex-wrap: nowrap;
-    }
-
-    .top-images-2 {
-        padding: 0;
+    .top-images-for-kids {
+        margin-top: 30px;
     }
 
     .top-images-assesories {
-        margin-top: 30px;
-        width: 100%;
+        width: 336px;
+        height: 260px;
+        margin-left: 36px;
+        margin-right: 36px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+}
+
+/* ------ Ширина от 1025px до 1239px ------------ */
+@media only screen and (min-width: 1025px) and (max-width: 1239px) {
+    .top-images {
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .top-images-box {
+        /*width: 30%;*/
+        width: 48%;
+    }
+
+    .top-images-for-men {
+        /*margin-left: 30px;*/
+        /*margin-bottom: 30px;*/
     }
 
     .top-items-wrapper {
-        width: 769px;
+        /*gap: 20px;*/
+        /*flex-wrap: wrap;*/
+        /*justify-content: center;*/
+    }
+
+    .top-item {
+        /*width: 30%;*/
+    }
+
+    .top-images-assesories {
+        width: 45%;
     }
 
     .feature {
-        height: 800px;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        padding-top: 50px;
+        /*height: 1000px;*/
     }
 
-    .feature__part {
-        width: 450px;
-        height: 130px;
-        margin: 60px 0;
-        align-items: center;
-    }
-
-    .feature__description {
-        /*display: block;*/
-        width: 400px;
-    }
-
-    .subscribe {
-        width: 100%;
-        padding: 100px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .subscribe-part {
-        margin-bottom: 40px;
-        width: 80%;
-        align-items: center;
-    }
-
-    .subscribe-form {
-        width: 760px;
-        height: 242px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .feature-wrapper {
+        height: 1700px;
+        padding: 10px 10px;
     }
 
     .footer {
@@ -119,59 +71,37 @@
         padding: 100px 10px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     }
 
-    .copyright {
-        margin-bottom: 30px;
-    }
-
-    .copyright p {
-        margin-top: 40px;
-        padding-left: 10px;
-    }
-
-    .copyright {
-        margin-left: 0;
-        flex-direction: column;
-    }
-
-    .social {
-        margin-right: 0;
+    .footer-2 {
         flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
     }
 }
 
-/* ------ Медиазапрос -------*/
-
-/* ------ Медиазапрос для ширины экрана от 320px до 767px ------------ */
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    .brand-container {
-        max-width: 767px;
-    }
-
-    /*
-    .header-container, .footer-container {
-        min-width: 0;
-    }
-*/
-
-    .header {
-        padding: 20px;
-    }
-
+/* ------ Ширина от 768px до 1024px ------------ */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     .top {
-        height: 400px;
-        background-position: center;
-        background-image: unset;
-        padding: 10px;
+        height: auto;
+        padding: 60px 40px;
+        background-position: left top;
+        background: rgb(241, 228, 230);
+        background-image: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         align-items: center;
     }
 
+    .top:hover {
+        background: rgb(241, 228, 230);
+        background-image: none;
+    }
+
     .top__link {
-        padding-top: 130px;
+        padding-top: 60px;
         margin-right: 0;
         line-height: 10px;
         letter-spacing: 0;
@@ -181,11 +111,183 @@
 
     .top__title h2,
     .top__title h4 {
-        margin-left: 20px;
         display: block;
         height: 40px;
         align-items: start;
-        color: rgb(34, 34, 34);
+        color: #fff;
+    }
+
+    .top-images-wrapper {
+        padding: 20px;
+        margin-top: 50px;
+        max-width: 100%;
+    }
+
+    .top-images,
+    .top-images-2 {
+        /*padding: 0;*/
+        /*flex-wrap: wrap;*/
+        /*!*justify-content: center;*!*/
+        /*gap: 15px;*/
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .top-images-assesories {
+        margin-top: 30px;
+        width: 360px;
+        height: 260px;
+}
+
+.top-images-box {
+width: 30%;
+}
+
+.top-items-wrapper {
+width: 100%;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
+
+.top-item {
+width: 45%;
+}
+
+.feature {
+height: 800px;
+padding: 15px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.feature__part {
+width: 450px;
+height: 130px;
+margin: 60px 0;
+align-items: center;
+}
+
+.feature__description {
+width: 400px;
+}
+
+.feature-wrapper,
+.subscribe-wrapper,
+.footer {
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
+
+.subscribe {
+width: 100%;
+padding: 100px 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.subscribe-part {
+margin-bottom: 40px;
+width: 80%;
+align-items: center;
+}
+
+.subscribe-form {
+width: 760px;
+height: 242px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.subscribe-form__input {
+flex-wrap: wrap;
+gap: 15px;
+justify-content: center;
+}
+
+.footer {
+width: 100%;
+padding: 100px 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+    .footer-2 {
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+.copyright {
+margin: 30px 0 0 0;
+flex-direction: column;
+text-align: center;
+}
+
+.social {
+flex-direction: row;
+}
+
+.header {
+padding: 15px 40px;
+height: auto;
+}
+}
+
+/* ------ Ширина от 320px до 767px ------------ */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .brand-container {
+        max-width: 767px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    .header__logo,
+    .header__menu-bar {
+        /*width: 100%;*/
+        justify-content: space-between;
+        padding: 10px 0;
+        margin-left: 0;
+    }
+
+    .top {
+        height: auto;
+        padding: 40px 10px;
+        background-position: center;
+        background-image: none;
+        background: rgb(241, 228, 230);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .top__link {
+        padding-top: 20px;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .top__title h2,
+    .top__title h4 {
+        margin-left: 20px;
+        height: 40px;
+        display: block;
+        align-items: start;
+        color: #222;
     }
 
     .top__title h2 {
@@ -201,61 +303,69 @@
     }
 
     .top-images-wrapper {
+        margin-top: 20px;
         max-width: 1960px;
     }
 
-    .top-images-wrapper {
-        margin: 20px 0 0 0;
+    .top-item-image-container {
+        /*width: 300px;*/
+        padding-right: 20px;
     }
 
-    .top-images {
-        padding: 0;
+    .top-images,
+    .top-images-2 {
+        /*padding: 0;*/
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+        /*gap: 10px;*/
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
     .top-images-box {
-        width: 310px;
-        height: 260px;
-        margin-bottom: 20px;
+        /*width: 310px;*/
+        /*!*height: 260px;*!*/
+        /*margin-bottom: 20px;*/
+        width: 100%;
     }
 
     .top-images-for-women,
     .top-images-for-men,
-    .top-images-for-kids {
+    .top-images-for-kids,
+    .top-images-assesories {
         margin: 20px 0;
-    }
-
-    .top-images-2 {
-        padding: 0;
     }
 
     .top-images-assesories {
-        margin: 20px 0;
-        padding: 0;
-        width: 310px;
-        height: 260px;
+        /*width: 310px;*/
+        /*!*height: 360px;*!*/
+        /*padding: 0;*/
+        /*justify-content: center;*/
+        width: 100%;
     }
 
     .top-items {
-        margin-top: 20px;
+        margin: 20px 0 100px;
         padding: 20px 0;
-        margin-bottom: 100px;
     }
 
     .top-items-wrapper {
-        flex-direction: column;
+        /*flex-direction: column;*/
         justify-content: center;
         align-items: center;
+        padding: 0;
     }
 
-    .top-item {
-        width: 320px;
-        margin-bottom: 20px;
-    }
-
+    .top-item,
     .top-item__text {
         width: 320px;
+        margin-bottom: 20px;
+        padding-right: 20px;
+    }
+
+    .top-item__text p {
+        padding-right: 20px;
     }
 
     .next-button {
@@ -263,12 +373,16 @@
     }
 
     .feature {
-        height: 900px;
+        /*height: 900px;*/
         padding: 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .feature-wrapper {
+        height: 950px;
     }
 
     .feature__part {
@@ -281,6 +395,15 @@
         line-height: 17px;
     }
 
+    .feature-wrapper,
+    .subscribe-wrapper,
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
     .subscribe {
         padding: 160px 0;
         display: flex;
@@ -290,8 +413,9 @@
     }
 
     .subscribe-part {
-        margin-bottom: 40px;
         width: 300px;
+        margin-bottom: 40px;
+        transition: transform 0.3s;
     }
 
     .subscribe-part:hover {
@@ -305,94 +429,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transition: transform 0.3s;
     }
 
     .subscribe-form:hover {
         transform: scale(1);
-    }
-
-    .footer {
-        width: 100%;
-        padding: 100px 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .copyright {
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .copyright a p {
-        margin-top: 40px;
-        padding-left: 10px;
-        color: rgb(255, 128, 128);
-    }
-
-    .social {
-        margin-bottom: 50px;
-    }
-}
-
-/* ------ Медиазапрос -------*/
-
-/* ==================== MEDIA QUERIES ==================== */
-
-/* Smartphones (≤ 767px) */
-@media only screen and (max-width: 767px) {
-    .header {
-        flex-direction: column;
-        padding: 10px 20px;
-        height: auto;
-    }
-
-    .header__logo, .header__menu-bar {
-        width: 100%;
-        justify-content: space-between;
-        padding: 10px 0;
-    }
-
-    .top {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 10px;
-        text-align: center;
-    }
-
-    .top__link {
-        margin-right: 0;
-        padding-top: 20px;
-        justify-content: center;
-    }
-
-    .top-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .top-images-box {
-        width: 90%;
-    }
-
-    .top-items-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .top-item {
-        width: 90%;
-    }
-
-    .feature-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .subscribe-wrapper {
-        flex-direction: column;
-        padding: 20px;
     }
 
     .subscribe-form__input {
@@ -402,94 +443,55 @@
     }
 
     .footer {
-        flex-direction: column;
+        width: 100%;
+        height: 500px;
+        padding: 100px 50px;
         text-align: center;
-        gap: 10px;
-    }
-}
-
-/* Tablets (768px – 1024px) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .header {
-        padding: 15px 40px;
-        height: auto;
-    }
-
-    .top {
+        display: flex;
         flex-direction: column;
-        height: auto;
-        padding: 60px 40px;
+        justify-content: center;
     }
 
-    .top__link {
-        padding-top: 60px;
+    .footer-2 {
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .copyright {
+        margin-bottom: 30px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .copyright a p {
+        margin-top: 40px;
+        padding-left: 10px;
+        color: #ff8080;
+    }
+
+    .social {
         margin-right: 0;
-        justify-content: center;
+        margin-bottom: 50px;
     }
 
-    .top-images {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .top-images-box {
-        width: 45%;
-    }
-
-    .top-items-wrapper {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .top-item {
-        width: 45%;
-    }
-
-    .feature-wrapper {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .subscribe-wrapper {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .subscribe-form__input {
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-    }
-
-    .footer {
-        flex-wrap: wrap;
+    .search-form {
+        flex-direction: column;
         justify-content: center;
         gap: 10px;
     }
-}
 
-/* Medium desktops (1025px – 1239px) */
-@media only screen and (min-width: 1025px) and (max-width: 1239px) {
-    .top-images {
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
+    .search-form input {
+        width: 100%;
     }
 
-    .top-images-box {
-        width: 30%;
-    }
 
-    .top-items-wrapper {
-        gap: 20px;
-        flex-wrap: wrap;
+    .page-container {
         justify-content: center;
     }
 
-    .top-item {
-        width: 30%;
+    .search-form button {
+        margin-left: 0;
+        padding: 10px;
     }
 }

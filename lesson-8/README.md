@@ -82,22 +82,22 @@
 ```
 
 ##
-### 1.1 Зависимости, используемые в проекте
+<h3 id="dependencies">1.1 Зависимости, используемые в проекте</h3>
 
 Установить зависимости:
-
+- [react-router-dom](#react-router-dom)
 ```bash
     npm install react-router-dom
 ```
-
+- [@reduxjs/toolkit](#toolkit) и [react-redux](#react-redux)
 ```bash
     npm install @reduxjs/toolkit react-redux
-
 ```
+- [redux-persist](#redux-persist)
 ```bash
     npm install redux-persist
 ```
-
+- [redux-thunk](#redux-thunk)
 ```bash
     npm install redux-thunk
 ```
@@ -108,7 +108,7 @@
 
 - Настроен `react-router-dom`:
 
-  - `/` — главная
+  - `/` - главная
   - `/men/:category` - категории
   - `/product/:id` - карточка товара
   - `/cart` - корзина
@@ -387,6 +387,181 @@ dispatch - вызывает Redux-действие `addToCart`, передава
 
 Товар с выбранным размером попадает в `cart.items` в Redux.
 
+##
+## Зависимости, используемые в  React JS проекте
+##
+<h3 id="react-router-dom">1. react-router-dom</h3>
+
+`react-router-dom` - это библиотека для маршрутизации в приложениях на React. 
+
+Позволяет создавать одностраничные приложения (SPA) с несколькими страницами, не перезагружая страницу при переходе между маршрутами.
+
+Назначение:
+- Обрабатывает маршруты (<Route>).
+- Обеспечивает переходы между страницами (<Link>, <NavLink>).
+- Управляет историей URL без перезагрузки страницы (useNavigate, useLocation, useParams).
+- Самостоятельная библиотека, не зависит от Redux. Используется отдельно.
+
+Пример кода:
+```
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+function App() { 
+return ( 
+  <BrowserRouter> 
+    <Routes> 
+      <Route path="/" element={<HomePage />} /> 
+      <Route path="/login" element={<LoginPage />} /> 
+    </Routes> 
+  </BrowserRouter> ); 
+}
+```
+[Назад к dependencies](#dependencies)
+
+##
+<h3 id="toolkit">2. @reduxjs/toolkit</h3>
+
+`@reduxjs/toolkit`- это базовая библиотека для управления состоянием. 
+Может работать отдельно, но часто используется вместе с react-redux.
+Официальный инструмент от Redux для упрощения написания логики состояния. 
+
+Содержит удобные методы и абстракции для:
+- создания slice (редьюсер + экшены)
+- настройки хранилища
+- работы с асинхронными thunk-функциями
+
+Назначение:
+- Упрощает настройку Redux store.
+- Устраняет необходимость в ручном написании action creators и reducers.
+- Обеспечивает удобную интеграцию с middleware (например, redux-thunk по умолчанию).
+
+Пример кода:
+```
+import { configureStore, createSlice } from '@reduxjs/toolkit'; 
+
+const counterSlice = createSlice({ 
+  name: 'counter', initialState: 0,   
+  reducers: { increment: (state) => state + 1, }, 
+}); 
+
+export const { increment } = counterSlice.actions; 
+export const store = configureStore({ 
+  reducer: { counter: counterSlice.reducer, }, 
+});
+```
+[Назад к dependencies](#dependencies)
+
+##
+<h3 id="react-redux">3. react-redux</h3>
+
+`react-redux` - это официальный биндинг между Redux и React. Он позволяет React-компонентам взаимодействовать с Redux store.
+
+Назначение:
+- Предоставляет компонент <Provider> для подключения Redux-хранилища ко всему приложению.
+- Вспомогательная зависимость, используется в связке с redux или @reduxjs/toolkit.
+- Предоставляет хуки:
+  - useSelector - для чтения данных из хранилища.
+  - useDispatch - для отправки действий (actions) в хранилище.
+
+Пример кода:
+```
+import React from 'react'; import ReactDOM from 'react-dom/client'; 
+import { Provider } from 'react-redux'; 
+import { store } from './store'; import App from './App'; 
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render
+  ( 
+    <Provider store={store}> 
+      <App /> 
+    </Provider> 
+  ); 
+  
+import { useSelector, useDispatch } from 'react-redux'; 
+import { increment } from './counterSlice'; 
+function Counter() { const count = useSelector((state) => state.counter); 
+const dispatch = useDispatch(); 
+
+return <button onClick={() => dispatch(increment())}>{count}</button>; 
+}
+```
+[Назад к dependencies](#dependencies)
+
+##
+<h3 id="redux-persist">4. redux-persist</h3>
+
+`redux-persist` позволяет сохранять (persist) Redux-состояние в хранилище браузера (например, localStorage, sessionStorage), чтобы оно сохранялось между перезагрузками страницы.
+
+Назначение:
+- Автоматически сохраняет части состояния в localStorage.
+- При инициализации приложения восстанавливает состояние из хранилища.
+- **Дополнительная библиотека, используется только с Redux. Не работает без redux/@reduxjs/toolkit.**
+
+Пример кода:
+```
+import { persistStore, persistReducer } from 'redux-persist'; 
+import storage from 'redux-persist/lib/storage'; // localStorage 
+import { configureStore } from '@reduxjs/toolkit'; 
+import rootReducer from './reducers'; 
+
+const persistConfig = { key: 'root', storage, }; 
+const persistedReducer = persistReducer(persistConfig, rootReducer); 
+
+export const store = configureStore({ reducer: persistedReducer, }); 
+export const persistor = persistStore(store);
+```
+
+Пример кода в index.js:
+```
+import { PersistGate } from 'redux-persist/integration/react'; 
+root.render( 
+  <Provider store={store}> 
+    <PersistGate loading={null} persistor={persistor}> 
+      <App /> 
+    </PersistGate> 
+  </Provider> 
+);
+```
+[Назад к dependencies](#dependencies)
+
+##
+<h3 id="redux-thunk">5. redux-thunk</h3>
+
+`redux-thunk` - это middleware для Redux, который позволяет выполнять асинхронные операции (например, API-запросы) в экшенах.
+
+Назначение:
+- Позволяет action creator возвращать не объект, а функцию.
+- Вспомогательная библиотека, работающая в связке с redux/@reduxjs/toolkit. Без них не имеет смысла.
+- Эта функция может выполнять асинхронный код (например, fetch) и затем вызвать dispatch.
+- **Если используется configureStore из @reduxjs/toolkit, redux-thunk подключается автоматически.**
+
+Пример кода:
+```
+export const fetchUser = () => async (dispatch) => { 
+  dispatch({ type: 'user/fetchStart' }); 
+    try 
+      { 
+          const response = await fetch('/api/user'); 
+          const data = await response.json(); 
+          dispatch({ type: 'user/fetchSuccess', payload: data }); 
+      } 
+    catch (error) 
+      { 
+        dispatch({ type: 'user/fetchError', error }); 
+      } 
+};
+```
+[Назад к dependencies](#dependencies)
+
+##
+#### Сводная таблица Зависимостей
+
+| Библиотека           | Назначение                          | Тип                    | Обязательно с использованием Redux |
+|----------------------|-------------------------------------|------------------------|------------------------------------|
+| react-router-dom     | Маршрутизация между страницами      | Самостоятельная        | нет                                |
+| @reduxjs/toolkit     | Состояние и управление логикой      | Базовая (ядро Redux)   | да                                 |
+| react-redux          | Связь React и Redux                 | Вспомогательная        | да                                 |
+| redux-persist        | Сохранение состояния Redux          | Дополнительная         | да                                 |
+| redux-thunk          | Асинхронные действия                | Middleware             | да                                 |
 
 
 

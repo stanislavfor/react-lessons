@@ -1,0 +1,153 @@
+.brand-container {
+    margin-bottom: 100px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 100px 230px 0;
+}
+
+.top-images-wrapper {
+    max-width: 1960px;
+    margin: 0 auto;
+}
+
+.top-images {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+    /*gap: 20px;*/
+    /*padding: 100px 230px 0;*/
+}
+
+.top-images-box {
+    width: 30%;
+    min-width: 280px;
+    height: 260px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.top-images-box:hover {
+    transform: scale(1.05);
+}
+
+/* Фоны */
+.top-images-for-women {
+    background-image: url("./../../public/img/top-images/1.jpg");
+}
+.top-images-for-women:hover {
+    background-image: url("./../../public/img/top-images/1-hover.png");
+}
+
+.top-images-for-men {
+    background-image: url("./../../public/img/top-images/2.jpg");
+}
+.top-images-for-men:hover {
+    background-image: url("./../../public/img/top-images/2-hover.png");
+}
+
+.top-images-for-kids {
+    background-image: url("./../../public/img/top-images/3.jpg");
+}
+.top-images-for-kids:hover {
+    background-image: url("./../../public/img/top-images/3-hover.png");
+}
+
+.top-images-assesories {
+    background-image: url("./../../public/img/top-images/4.jpg");
+    padding-top: 60px;
+    width: 1140px;
+}
+.top-images-assesories:hover {
+    background-image: url("./../../public/img/top-images/4-hover.png");
+}
+
+/* Стили для текста внутри ссылок */
+.top-images-box a {
+    /*color: #f06292;*/
+    /*text-align: center;*/
+    /*font-size: 18px;*/
+    /*font-weight: bold;*/
+    /*text-decoration: none;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*line-height: 1.5;*/
+    /*text-transform: uppercase;*/
+    /*background-color: rgba(0, 0, 0, 0.4); !* затемнение *!*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+.top-images-box a {
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.4); /* затемнение */
+    width: 100%;
+    height: 100%;
+}
+
+.top-images-assesories a {
+    margin-top: 6px;
+    height: 200%;
+}
+
+.top-images-box p {
+    display: block;
+    text-align: center;
+    width: 200px;
+}
+
+.top-images-box a p:first-child {
+
+}
+
+/* Стили для второго <p> внутри ссылки */
+.top-images-box a p:last-child {
+    color: #ff4081; /* насыщенно-розовый */
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* Медиа-запросы */
+
+@media only screen and (min-width: 1025px) and (max-width: 1239px) {
+    .top-images-box {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .top-images-box {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .top-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-images-box {
+        width: 100%;
+    }
+}

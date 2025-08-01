@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => (
     <div className="footer-container">
@@ -8,13 +9,18 @@ const Footer = () => (
             </div>
             <div className="social">
                 {[1, 2, 3, 4].map(i => (
-                    <a key={i} href="#copyright">
-                        <div className={`social-icon${i}`}></div>
-                    </a>
+                    <Link key={i} to="#" className={`social-icon-link`}>
+                        <div className={`social-icon${i}`} />
+                    </Link>
                 ))}
             </div>
         </div>
+        <div className="footer-2 copyright">
+            <a><p>ReactJS lessons</p></a>
+        </div>
+
     </div>
+
 );
 
 export default Footer;
