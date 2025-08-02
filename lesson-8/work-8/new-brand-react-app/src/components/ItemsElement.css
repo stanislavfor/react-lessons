@@ -1,0 +1,114 @@
+.top-item__text {
+    width: 100%;
+    padding: 24px 16px;
+    background: rgb(248, 248, 248);
+    box-sizing: border-box;
+}
+
+.top-item-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 420px;
+}
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.top-item-image-container:hover .hover-overlay {
+    opacity: 1;
+}
+
+/*.overlay-text {*/
+/*    color: white;*/
+/*    font-size: 16px;*/
+/*}*/
+
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-image: url("../../public/img/top-items/hover-to-cart.png");*/
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.top-item-image-container:hover .hover-overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    color: #f16d7f;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+
+/* Медиа-запросы */
+
+/* ------ Ширина от 1240px до 1595px ------------ */
+@media only screen and (min-width: 1240px) and (max-width: 1595px) {
+
+    .top-item-image-container {
+        position: relative;
+        width: 320px;
+        height: 420px;
+    }
+
+}
+
+/* ------ Ширина от 1025px до 1239px ------------ */
+@media only screen and (min-width: 1025px) and (max-width: 1239px) {
+    .top-item-image-container {
+        position: relative;
+        width: 320px;
+        height: 420px;
+    }
+
+}
+
+/* ------ Ширина от 768px до 1024px ------------ */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .top-item-image-container {
+        position: relative;
+        width: 320px;
+        height: 420px;
+    }
+
+}
+
+/* ------ Ширина от 320px до 767px ------------ */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .top-item-image-container {
+        /*position: relative;*/
+        width: 340px;
+        /*height: 420px;*/
+    }
+
+}

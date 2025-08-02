@@ -33,7 +33,7 @@ const CartPage = () => {
         <>
             <Header />
 
-            <div className="section-container" style={{ padding: '100px', textAlign: 'center' }}>
+            <div className="section-container" style={{  }}>
                 <h2 style={{ fontSize: '26px', fontWeight: '500', paddingTop: '0', paddingBottom: '10px' }}>Customer Cart</h2>
                 <h3 style={{ fontSize: '20px', fontWeight: '500', paddingTop: '0', paddingBottom: '80px' }}>A shopping cart for your purchases</h3>
 

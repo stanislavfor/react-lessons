@@ -1,6 +1,6 @@
 // src/components/ItemsElement.js
 import React from 'react';
-import './TopItems.css';
+import './ItemsElement.css';
 
 const ItemsElement = ({ items, selectedSize, onSizeChange, onAddToCart }) => {
     return (
@@ -32,11 +32,11 @@ const ItemsElement = ({ items, selectedSize, onSizeChange, onAddToCart }) => {
                                     </option>
                                 ))}
                             </select>
-
                         </label>
                         <div className="top-item__price">${item.price.toFixed(2)}</div>
                     </div>
                 </div>
+
             ))}
         </div>
     );

@@ -11,37 +11,42 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.top-item-image-container {
-    position: relative;
-    overflow: hidden;
-}
-
 .top-item-image {
     width: 100%;
     display: block;
 }
 
-.hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
+
+
+
+
+/* Медиа-запросы */
+
+/* ------ Ширина от 1240px до 1595px ------------ */
+@media only screen and (min-width: 1240px) and (max-width: 1595px) {
+
 }
 
-.top-item-image-container:hover .hover-overlay {
-    opacity: 1;
+/* ------ Ширина от 1025px до 1239px ------------ */
+@media only screen and (min-width: 1025px) and (max-width: 1239px) {
+
 }
 
-.overlay-text {
-    color: white;
-    font-size: 16px;
+/* ------ Ширина от 768px до 1024px ------------ */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .top-images-assesories {
+        /*width: 1140px;*/
+        /*width: 100vh;*/
+        /*height: 180px;*/
+        margin-top: 0;
+        padding-bottom: 70px;}
+
 }
+
+/* ------ Ширина от 320px до 767px ------------ */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+}
+
 

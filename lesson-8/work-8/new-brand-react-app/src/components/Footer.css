@@ -1,0 +1,233 @@
+/*.footer {*/
+/*    margin: 0 auto;*/
+/*    max-width: 1600px;*/
+/*    padding: 30px 30px 20px 0;*/
+/*    height: 79px;*/
+/*    background: rgb(34, 34, 36);*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*    !*    justify-content: flex-start;*!*/
+/*}*/
+
+.footer {
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 30px 30px 20px 30px;
+    height: auto;
+    background: rgb(34, 34, 36);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 20px;
+}
+
+/*.footer-2 {*/
+/*    height: 79px;*/
+/*    display: flex;*/
+/*    justify-content: start;*/
+/*    !*text-align: center;*!*/
+/*    padding-left: 537px;*/
+/*}*/
+
+.footer-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/*.copyright {*/
+/*    font-family: Lato, serif;*/
+/*    font-size: 16px;*/
+/*    font-weight: 400;*/
+/*    line-height: 19px;*/
+/*    letter-spacing: 0;*/
+/*    text-align: center;*/
+/*    transition: transform 3s;*/
+/*    margin-left: 310px;*/
+/*}*/
+
+.copyright {
+    font-family: Lato, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    margin: 0;
+}
+
+.copyright a p {
+    color: rgb(255, 128, 128);
+    transition: transform 3s;
+}
+
+.copyright a p:hover {
+    color: rgb(251, 251, 251);
+    transition: color 0.3s ease-in-out;
+    transform: scale(0.9);
+}
+
+.footer-block {
+    display: inline-block;
+    height: 27px;
+    width: 470px;
+    /*    background-color: aliceblue;*/
+}
+
+/*.social {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-around;*/
+/*    margin-right: 385px;*/
+/*}*/
+
+.social {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*.social img {*/
+/*    margin-left: 10px;*/
+/*    width: 32px;*/
+/*    height: 32px;*/
+/*    background: rgb(255, 255, 255);*/
+/*    transition: transform 3s;*/
+/*}*/
+
+/*.social img:hover {*/
+/*    background-color: rgb(255, 128, 128);*/
+/*    transition: background-color 0.3s ease-in-out;*/
+/*    transform: scale(1.2);*/
+/*}*/
+
+.social-icon1 {
+    margin-left: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url("./../../public/img/1.png");
+    background-color: rgb(255, 255, 255);
+    transition: transform 3s;
+}
+
+.social-icon1:hover {
+    width: 32px;
+    height: 32px;
+    background-image: url("./../../public/img/1-hover.png");
+    background-color: rgb(255, 128, 128);
+    transition: background-color 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.social-icon2 {
+    margin-left: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url("./../../public/img/2.png");
+    background-color: rgb(255, 255, 255);
+    transition: transform 3s;
+}
+
+.social-icon2:hover {
+    width: 32px;
+    height: 32px;
+    background-image: url("./../../public/img/2-hover.png");
+    background-color: rgb(255, 128, 128);
+    transition: background-color 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.social-icon3 {
+    margin-left: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url("./../../public/img/3.png");
+    background-color: rgb(255, 255, 255);
+    transition: transform 3s;
+}
+
+/* Медиа-запросы */
+
+/* ------ Ширина от 1240px до 1595px ------------ */
+@media only screen and (min-width: 1240px) and (max-width: 1595px) {
+    .footer {
+        padding: 30px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-2 {
+        justify-content: center;
+        padding-top: 10px;
+    }
+}
+
+
+/* ------ Ширина от 1025px до 1239px ------------ */
+@media only screen and (min-width: 1025px) and (max-width: 1239px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        height: auto;
+    }
+
+    .social {
+        justify-content: center;
+        margin: 20px 0 0 0;
+    }
+
+    .footer-2 {
+        justify-content: center;
+        padding-top: 15px;
+    }
+}
+
+
+/* ------ Ширина от 768px до 1024px ------------ */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .social {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .footer-2 {
+        justify-content: center;
+        padding-top: 15px;
+    }
+}
+
+
+/* ------ Ширина от 320px до 767px ------------ */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .copyright {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .social {
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .footer-2 {
+        justify-content: center;
+        padding-top: 10px;
+    }
+}
+

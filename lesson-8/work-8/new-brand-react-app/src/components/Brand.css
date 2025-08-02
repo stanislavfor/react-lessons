@@ -4,7 +4,7 @@
     /*justify-content: center;*/
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 100px 230px 0;
+    padding: 100px 20px 0;
 }
 
 .top-images-wrapper {
@@ -13,11 +13,10 @@
 }
 
 .top-images {
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
-    /*justify-content: center;*/
-    /*gap: 20px;*/
-    /*padding: 100px 230px 0;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .top-images-box {
@@ -62,7 +61,9 @@
 .top-images-assesories {
     background-image: url("./../../public/img/top-images/4.jpg");
     padding-top: 60px;
-    width: 1140px;
+    width: 97%;
+    /*width: 1140px;*/
+    /*max-width: 1600px;*/
 }
 .top-images-assesories:hover {
     background-image: url("./../../public/img/top-images/4-hover.png");
@@ -131,16 +132,18 @@
 
 @media only screen and (min-width: 1025px) and (max-width: 1239px) {
     .top-images-box {
-        width: 30%;
+        width: 45%;
     }
 }
 
+/* ------ Ширина от 768px до 1024px ------------ */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .top-images-box {
         width: 80%;
     }
 }
 
+/* ------ Ширина от 320px до 767px ------------ */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
     .top-images {
         flex-direction: column;

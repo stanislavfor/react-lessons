@@ -5,6 +5,7 @@
     margin-bottom: 20px;
 }
 
+
 /* --- Таблица --- */
 .cart-table {
     width: 100%;
@@ -89,6 +90,11 @@ tbody tr:active {
 
 /* --- Медиа-запрос для мелких экранов --- */
 @media (max-width: 768px) {
+
+    .section-container {
+        padding: 10px;
+        text-align: center;
+    }
     .cart-table {
         font-size: 12px;
     }

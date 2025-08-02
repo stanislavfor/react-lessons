@@ -5,6 +5,13 @@
     src: local("Lato"), url("../fonts/Lato-Light.ttf") format("ttf"), url("../fonts/Lato-Regular.ttf") format("ttf"), url("../fonts/Lato-SemiBold.ttf") format("ttf"), url("../fonts/Lato-Medium.ttf") format("ttf"), url("../fonts/Lato-Bold.ttf") format("ttf");
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -305,7 +312,9 @@ span {
 .top-images-assesories {
     width: 100%;
 }
-/**/
+
+
+/* ----------- ------------------*/
 
 .top-items {
     /*padding: 80px 230px 40px;*/
@@ -419,10 +428,17 @@ span {
     transition: opacity 0.6s;
 }
 
+/*.top-item__text {*/
+/*    width: 360px;*/
+/*    padding: 24px 16px 24px 16px;*/
+/*    background: rgb(248, 248, 248);*/
+/*}*/
+
 .top-item__text {
-    width: 360px;
-    padding: 24px 16px 24px 16px;
+    width: 100%;
+    padding: 24px 16px;
     background: rgb(248, 248, 248);
+    box-sizing: border-box;
 }
 
 .top-items h4 {
@@ -495,6 +511,9 @@ span {
     transform: scale(1.05);
 }
 
+
+/*---------------- to feature -------------*/
+
 .feature {
     width: 100%;
     background: rgb(34, 34, 36);
@@ -549,6 +568,9 @@ span {
     letter-spacing: 0;
     text-align: center;
 }
+
+
+/*---------------- to subscribe -------------*/
 
 .subscribe {
     margin: 0 auto;
@@ -705,121 +727,8 @@ span {
     transition: background-color 0.3s ease-in-out;
 }
 
-.footer {
-    margin: 0 auto;
-    max-width: 1600px;
-    padding: 30px 30px 20px 0;
-    height: 79px;
-    background: rgb(34, 34, 36);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /*    justify-content: flex-start;*/
-}
 
-.footer-2 {
-    height: 79px;
-    display: flex;
-    justify-content: start;
-    /*text-align: center;*/
-    padding-left: 537px;
-}
-
-.copyright {
-    font-family: Lato, serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0;
-    text-align: center;
-    transition: transform 3s;
-    margin-left: 310px;
-}
-
-.copyright a p {
-    color: rgb(255, 128, 128);
-    transition: transform 3s;
-}
-
-.copyright a p:hover {
-    color: rgb(251, 251, 251);
-    transition: color 0.3s ease-in-out;
-    transform: scale(0.9);
-}
-
-.footer-block {
-    display: inline-block;
-    height: 27px;
-    width: 470px;
-    /*    background-color: aliceblue;*/
-}
-
-.social {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-right: 385px;
-}
-
-/*.social img {*/
-/*    margin-left: 10px;*/
-/*    width: 32px;*/
-/*    height: 32px;*/
-/*    background: rgb(255, 255, 255);*/
-/*    transition: transform 3s;*/
-/*}*/
-
-/*.social img:hover {*/
-/*    background-color: rgb(255, 128, 128);*/
-/*    transition: background-color 0.3s ease-in-out;*/
-/*    transform: scale(1.2);*/
-/*}*/
-
-.social-icon1 {
-    margin-left: 10px;
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/1.png");
-    background-color: rgb(255, 255, 255);
-    transition: transform 3s;
-}
-
-.social-icon1:hover {
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/1-hover.png");
-    background-color: rgb(255, 128, 128);
-    transition: background-color 0.3s ease-in-out;
-    transform: scale(1.2);
-}
-
-.social-icon2 {
-    margin-left: 10px;
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/2.png");
-    background-color: rgb(255, 255, 255);
-    transition: transform 3s;
-}
-
-.social-icon2:hover {
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/2-hover.png");
-    background-color: rgb(255, 128, 128);
-    transition: background-color 0.3s ease-in-out;
-    transform: scale(1.2);
-}
-
-.social-icon3 {
-    margin-left: 10px;
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/3.png");
-    background-color: rgb(255, 255, 255);
-    transition: transform 3s;
-}
-
+/*---------------- to footer -------------*/
 .social-icon3:hover {
     width: 32px;
     height: 32px;
