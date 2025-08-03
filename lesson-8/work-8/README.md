@@ -150,6 +150,8 @@ Apache разрешает использование `.htaccess`, но в нек
 
 <br>
 
+##
+
 <h2 id="githubpages">Размещение сайта на GitHub Pages (React + gh-pages)</h2>
 
 ### 1. Указать `homepage` в `package.json`
@@ -316,6 +318,7 @@ import { HashRouter } from "react-router-dom";
 ##
 <br>
 
+##
 ## Автоматизация деплоя React-приложения на GitHub Pages после каждого `git push` в репозитории
 
 Требуется наличие следующих данных:
