@@ -1,7 +1,10 @@
 .section-container {
     padding-top: 80px;
-    padding-bottom: 80px;
     text-align: center;
+}
+
+.cart-paddind-bottom {
+    padding-bottom: 80px;
 }
 
 /* --- Обёртка для прокрутки на маленьких экранах --- */
