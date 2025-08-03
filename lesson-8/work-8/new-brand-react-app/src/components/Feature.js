@@ -7,7 +7,7 @@ const features = [
 ];
 
 const Feature = () => (
-    <div className="feature">
+    <div className="feature" id="feature">
         <div className="feature-wrapper">
             {features.map((f, idx) => (
                 <div key={idx} className="feature__part">

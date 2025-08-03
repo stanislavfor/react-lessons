@@ -16,8 +16,8 @@ const Footer = () => (
                 ))}
             </div>
         </div>
-        <div className="footer-2 copyright">
-            <a><p>ReactJS lessons</p></a>
+        <div className="footer-2 copyright" id="footer-2">
+            <a href="/#feature"><p>ReactJS lessons</p></a>
         </div>
 
     </div>
