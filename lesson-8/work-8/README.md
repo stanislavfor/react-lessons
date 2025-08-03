@@ -297,8 +297,8 @@ import { HashRouter } from "react-router-dom";
 | Нет ветки `gh-pages`            | `npm run deploy` не выполнялся | Запустить `npm run deploy`             |
 | Статика не грузится             | Неверные пути                  | Снова проверь `homepage`               |
 
-
-
+##
+##
 ## Автоматизация деплоя React-приложения на GitHub Pages после каждого `git push` в репозитории
 
 Требуется наличие следующих данных:
