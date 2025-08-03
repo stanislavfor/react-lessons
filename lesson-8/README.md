@@ -564,8 +564,8 @@ export const fetchUser = () => async (dispatch) => {
 | redux-thunk          | Асинхронные действия                | Middleware             | да                                 |
 
 
-
-
+<br><br>
+[Инструкция развертывания React-проекта на хостинге](work-8/README.md)
 
 
 
