@@ -1,6 +1,8 @@
 ##
 ## Развертывание React-проекта на продакшн-хостинге
 
+<br>
+
 Полный проект React (`new-brand-react-app`) с папками `src`, `public`, с файлом `package.json`, можно развернуть на хостинге в собственном домене, например 
 ```
 https://my-domain.com
@@ -153,6 +155,8 @@ Apache разрешает использование `.htaccess`, но в нек
 ##
 
 <h2 id="githubpages">Размещение сайта на GitHub Pages (React + gh-pages)</h2>
+
+<br>
 
 ### 1. Указать `homepage` в `package.json`
 
@@ -320,6 +324,7 @@ import { HashRouter } from "react-router-dom";
 
 ##
 ## Автоматизация деплоя React-приложения на GitHub Pages после каждого `git push` в репозитории
+<br>
 
 Требуется наличие следующих данных:
 
